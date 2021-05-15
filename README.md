@@ -19,3 +19,10 @@ curl -XPUT 'http://localhost:8080/api/tasks' \
     "completed": true
 }'
 ```
+
+
+
+
+## ビデオチュートリアル
+
+[RDSを使ったReactive Programmingの紹介(R2DBC) 日本語](https://www.youtube.com/watch?v=846N_9etLlI)
