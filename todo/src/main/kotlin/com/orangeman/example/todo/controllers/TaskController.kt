@@ -17,11 +17,28 @@ class TaskController(
         return taskRepositories.findAll()
     }
 
-    @PutMapping
-    fun put(
+    @GetMapping("/{id}")
+    fun get(@PathVariable("id") id: Int): Mono<Task> {
+        return taskRepositories.findById(id)
+    }
+
+    @PostMapping
+    fun create(
         @RequestBody task: Task
-    ): Mono<Integer> {
+    ): Mono<Task> {
+        return taskRepositories.save(task)
+    }
+
+    @PutMapping
+    fun updateStatus(
+        @RequestBody task: Task
+    ): Mono<Int> {
         return taskRepositories.updateStatus(task.id, task.completed)
+    }
+
+    @DeleteMapping("/{id}")
+    fun delete(@PathVariable("id") id: Int) {
+
     }
 
 }

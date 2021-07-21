@@ -10,6 +10,6 @@ interface TaskRepositories : ReactiveCrudRepository<Task, Int> {
 
     @Modifying
     @Query("update task set completed=:completed where id=:id")
-    fun updateStatus(id: Int, completed: Boolean): Mono<Integer>
+    fun updateStatus(id: Int, completed: Boolean): Mono<Int>
 
 }
